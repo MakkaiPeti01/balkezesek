@@ -16,5 +16,9 @@
             Suly = int.Parse(adatok[3]);
             Magassag = int.Parse(adatok[4]);
         }
+        public void Evszam(string sor)
+        {
+
+        }
     }
 }
