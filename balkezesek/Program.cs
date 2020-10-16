@@ -38,16 +38,16 @@ namespace balkezesek
         {
             while (true)
             {
+                Console.WriteLine("5. feladat:");
                 Console.Write("Írjon be egy 1990 és 1999 közötti évszámot!");
                 be = int.Parse(Console.ReadLine());
                 if (be >= 1990 && be <= 1999)
                 {
-                    Console.WriteLine("mau");
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("nem");
+                    Console.WriteLine("Hibás adat! Kérek egy 1990 és 1999 közötti számot!");
                 }
             }           
         }
@@ -58,14 +58,14 @@ namespace balkezesek
             double db = 0;
             foreach (var i in lista)
             {
-                if (be>=int.Parse(i.Elso.Substring(0,4)) && be <= int.Parse(i.Utolso.Substring(0,4)))
+                if (be >= int.Parse(i.Elso.Substring(0, 4)) && be <= int.Parse(i.Utolso.Substring(0, 4)))
                 {
                     suly = suly + i.Suly;
                     db++;
                 }
             }
             double atlag = Math.Round(suly / db, 2);
-            Console.WriteLine(atlag);
+            Console.WriteLine($"6. feladat: {atlag} font");
         }
         static void Main(string[] args)
         {
