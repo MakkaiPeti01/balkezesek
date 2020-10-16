@@ -67,6 +67,24 @@ namespace balkezesek
             double atlag = Math.Round(suly / db, 2);
             Console.WriteLine($"6. feladat: {atlag} font");
         }
+        static void bonusz()
+        {
+            var nevek = from l in lista
+                        select l.Nev;
+            var nevlista = nevek.ToList();
+            var kezdoBetu = from b in nevlista
+                            orderby b
+                            group b by b[0] into tempNevek
+                            select tempNevek;
+            foreach (var csoport in kezdoBetu)
+            {
+                Console.WriteLine("Kezdőbetű: {0}",csoport.Key);
+                foreach (var tag in csoport)
+                {
+                    Console.WriteLine($"\t{tag}");
+                }
+            }         
+        }
         static void Main(string[] args)
         {
             //var h = new Balkezesek("Jim Abbott","1989-04-08","1999-07-21",200,75);
@@ -74,6 +92,8 @@ namespace balkezesek
             negyedik();
             otodik();
             hatodik();
+            bonusz();
+            //játékosok nevei kezdőbetűnként
             Console.ReadKey();
         }
     }
